@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación NativeScript</title>
+    <link rel="stylesheet" href="./dist/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Neucha" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <style media="screen">
+        body {
+            overflow: auto;
+        }
+
+        .card-content ol li {
+            margin-bottom: 10px
+        }
+
+        a {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .img-responsive {
+            display: block;
+            max-width: 100%;
+        }
+
+        .collapsible-header>p {
+            margin: 0
+        }
+    </style>
+
+
+    <div class="container">
+        <ul class="collapsible blue-grey lighten-5" data-collapsible="accordion">
+            <h5 class="center-align" style="margin-top:5%">
+                <img src="./dist/img/nativescript.png" style="max-height:200px">
+            </h5>
+
+            <li>
+                <div class="collapsible-header">1. Windows
+                    <i class="material-icons">arrow_drop_down</i>
+                </div>
+                <div class="collapsible-body blue-grey lighten-4">
+                    <ul class="collapsible blue-grey lighten-5" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header">1. Crear espacio de trabajo
+                                <i class="material-icons">arrow_drop_down</i>
+                            </div>
+                            <div class="collapsible-body blue-grey lighten-4">
+                                <span>
+                                    <ol>
+                                        <li type="i">
+                                            <p>Crear una carpeta donde se alojará el proyecto en la raíz del disco duro y extraer
+                                                el contenido del proyecto:
+                                                <br/>
+                                                <b>C:\Ionic\CineApp\</b>
+                                            </p>
+                                            <a href="./dist/img/carpetaproyecto.png">
+                                                <img class="img-responsive" src="./dist/img/carpetaproyecto.png">
+                                            </a>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Abrir la cónsola de comandos con permisos de administrador</b>
+                                            </p>
+                                            <a href="./dist/img/consola-administrador.png">
+                                                <img class="img-responsive" src="./dist/img/consola-administrador.png">
+                                            </a>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Desde la consola de comandos, navegar hasta la ruta donde alojan los archivos
+                                                del proyecto. Para este ejemplo se creará el directorio raíz del proyecto
+                                                en la raíz del disco duro:
+                                                <br/>
+                                                <b>C:\Ionic\CineApp\</b>
+                                            </p>
+                                            <code>cd C:\Ionic\CineApp\</code>
+                                            <a href="./dist/img/directorioraiz.png">
+                                                <img class="img-responsive" src="./dist/img/directorioraiz.png">
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header">2. Configurar el servidor
+                                <i class="material-icons">arrow_drop_down</i>
+                            </div>
+                            <div class="collapsible-body blue-grey lighten-4">
+                                <span>
+                                    <ol>
+                                        <li type="i">
+                                            <h5></h5>
+                                            <p>Chocolatey</p>
+                                            <p>Ir a
+                                                <a href="https://chocolatey.org/install#install-with-cmdexenpm"> https://chocolatey.org/install#install-with-cmdexenpm </a>
+                                            </p>
+                                        </li>
+                                        <ol>
+                                            <li type="i">
+                                                <p>Abrir la cónsola de comandos con permisos de administrador</b>
+                                                </p>
+                                                <a href="./dist/img/consola-administrador.png">
+                                                    <img class="img-responsive" src="./dist/img/consola-administrador.png">
+                                                </a>
+                                            </li>
+                                            <li type="i">
+                                                <p>Desde la consola de comandos ejecutar el comando></p>
+                                                <code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile
+                                                    -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object
+                                                    System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+                                                    && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code>
+                                            </li>
+                                        </ol>
+
+                                        <li type="i">
+                                            <h5></h5>
+                                            <p>Instalar nodejs: Desde la consola de comandos ejecutar el comando>:</p>
+                                            <code>choco install nodejs -y</code>
+                                            <p>y esperar a que termine el proceso de instalación.</p>
+                                            <a href="./dist/img/node.png">
+                                                <img class="img-responsive" src="./dist/img/node.png">
+                                            </a>
+                                        </li>
+                                        <li type="i">
+                                            <p>Instalar JavaSDK8</p>
+                                            <code>choco install jdk8 -y</code>
+                                            <p>y esperar a que termine el proceso de instalación.</p>
+                                            <a href="./dist/img/jdk.png">
+                                                <img class="img-responsive" src="./dist/img/jdk.png">
+                                            </a>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Instalar AndroidSDK</p>
+                                            <code>choco install android-sdk -y</code>
+                                            <p>y esperar a que termine el proceso de instalación.</p>
+                                            <a href="./dist/img/androidsdk.png">
+                                                <img class="img-responsive" src="./dist/img/androidsdk.png">
+                                            </a>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Instalar Android SDK 25, Android SDK Build-tools 25.0.2 o superior, Repositorio
+                                                soporte Android, repostorio soporte Google.</p>
+                                            <code>%ANDROID_HOME%\tools\bin\sdkmanager platforms;android-25; build-tools;25.0.2
+                                                extras;android;m2repository
+                                            </code>
+                                            <p>y esperar a que termine el proceso de instalación.</p>
+                                            <a href="./dist/img/androidhome.png">
+                                                <img class="img-responsive" src="./dist/img/androidhome.png">
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header">3. Instalar servicios Ionic2 y Apache Córdoba
+                                <i class="material-icons">arrow_drop_down</i>
+                            </div>
+                            <div class="collapsible-body blue-grey lighten-4">
+                                <span>
+                                    <ol>
+                                        <li type="i">
+                                            <p>Ejecutar el comando
+                                                <code>npm install ionic cordova -g</code> y esperar a que termine el proceso de
+                                                instalación.
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header">4. Iniciar el proyecto
+                                <i class="material-icons">arrow_drop_down</i>
+                            </div>
+                            <div class="collapsible-body blue-grey lighten-4">
+                                <span>
+                                    <ol>
+                                        <li type="i">
+                                            <p>Desde la consola de comandos, iniciar las depencendias del proyecto con npm:</p>
+                                            <code>npm install</code>
+                                            <a href="./dist/img/npminstall.png">
+                                                <img class="img-responsive" src="./dist/img/npminstall.png">
+                                            </a>
+                                            <p>y esperar a que termine el proceso de instalación.</p>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Iniciar el servicio mongod:</p>
+                                            <a href="./dist/img/mongod.png">
+                                                <img class="img-responsive" src="./dist/img/mongod.png">
+                                            </a>
+                                            <a href="./dist/img/mongodconsola.png">
+                                                <img class="img-responsive" src="./dist/img/mongodconsola.png">
+                                            </a>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Ejecutar el comando
+                                                <code>nodemon server.js</code> y esperar a que termine el proceso de monitoreo
+                                                de mongo.</p>
+                                            <a href="./dist/img/nodemon.png">
+                                                <img class="img-responsive" src="./dist/img/nodemon.png">
+                                            </a>
+                                            <ol>
+                                                <li type="i">
+                                                    <p>Abrir cónsola de parse server: </p>
+                                                    <a href="http://localhost:8080/dashboard/login" target="_blank">http://localhost:8080/dashboard/login</a>
+                                                    <p>Username: admin</p>
+                                                    <p>Password: 12345</p>
+                                                    <a href="./dist/img/parsedashboard.png">
+                                                        <img class="img-responsive" src="./dist/img/parsedashboard.png">
+                                                    </a>
+                                                </li>
+
+                                                <li type="i">
+                                                    <p>Verificar que exista la aplicación Movies: </p>
+                                                    <a href="./dist/img/parsemovies.png">
+                                                        <img class="img-responsive" src="./dist/img/parsemovies.png">
+                                                    </a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li type="i">
+                                            <ol>
+                                                <li type="i">
+                                                    <p>Abrir la cónsola de comandos con permisos de administrador</b>
+                                                    </p>
+                                                    <a href="./dist/img/consola-administrador.png">
+                                                        <img class="img-responsive" src="./dist/img/consola-administrador.png">
+                                                    </a>
+                                                </li>
+
+                                                <li type="i">
+                                                    <p>Desde la consola de comandos, navegar hasta la ruta donde alojan los
+                                                        archivos del proyecto. Para este ejemplo se creará el directorio
+                                                        raíz del proyecto en la raíz del disco duro:
+                                                        <br/>
+                                                        <b>C:\Ionic\CineApp\</b>
+                                                    </p>
+                                                    <code>C:\Ionic\CineApp\</code>
+                                                    <a href="./dist/img/directorioraiz.png">
+                                                        <img class="img-responsive" src="./dist/img/directorioraiz.png">
+                                                    </a>
+                                                </li>
+                                                <li type="i">
+                                                    <p>Ejecutar el comando
+                                                        <code>ionic serve --l</code> y esperar a que termine el proceso de compilación
+                                                        del proyecto.</p>
+                                                    <a href="./dist/img/ionicserve.png">
+                                                        <img class="img-responsive" src="./dist/img/ionicserve.png">
+                                                    </a>
+                                                </li>
+
+                                                <li type="i">
+                                                    <p>Automáticamente se abrirá el procyecto compilado en el explodador en
+                                                        la url:.</p>
+                                                    <a href="http://localhost:8100/ionic-lab" target="_blank">http://localhost:8100/ionic-lab</a>
+                                                    <a href="./dist/img/proyecto.png">
+                                                        <img class="img-responsive" src="./dist/img/proyecto.png">
+                                                    </a>
+                                                </li>
+
+                                                <li type="i">
+                                                    <p>Debido a que la base de datos se encuentra vacía, una vez iniciada la
+                                                        aplicación:
+                                                    </p>
+                                                    <ol>
+                                                        <li>
+                                                            Regístre un usuario
+                                                        </li>
+                                                        <li>
+                                                            Inicie Sesión con el usuario registrado
+                                                        </li>
+                                                        <li>
+                                                            Comience a utilizar la aplicación generando las películas predeterminadas.
+                                                            <a href="./dist/img/generarpeliculas.png">
+                                                                <img class="img-responsive" src="./dist/img/generarpeliculas.png">
+                                                            </a>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header">5. Errores comunes
+                                <i class="material-icons">arrow_drop_down</i>
+                            </div>
+                            <div class="collapsible-body blue-grey lighten-4">
+                                <span>
+                                    <ol>
+                                        <li type="i">
+                                            <p>Mongod. Puerto 8080 en uso:</p>
+                                            <a href="./dist/img/errorpuerto8080.png">
+                                                <img class="img-responsive" src="./dist/img/errorpuerto8080.png">
+                                            </a>
+                                            <p>Cerrar cualquier otro proceso que está utilizando el puerto 8080 y ejecutar nuevamente
+                                                el código</p>
+                                            <code>nodemon serve.js</code>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Error comunicación:</p>
+                                            <a href="./dist/img/errorcomunicacion.png">
+                                                <img class="img-responsive" src="./dist/img/errorcomunicacion.png">
+                                            </a>
+                                            <p>Verificar que los servicio
+                                                <code>mongod</code> y
+                                                <code>nodemon serve.js</code> esten corriendo en el servidor</p>
+                                            <p>Una vez iniciados estos procesos presione el botón
+                                                <b>Reintentar</b>
+                                            </p>
+                                        </li>
+
+                                        <li type="i">
+                                            <p>Error Runtime Error: ev.target closest is not a function</p>
+                                            <a href="./dist/img/errorbug.png">
+                                                <img class="img-responsive" src="./dist/img/errorbug.png">
+                                            </a>
+                                            <p>Este error es un bug del framework Ionic2. Ocurre cuando se intenta utilizar
+                                                un item slider varias veces sin que termine el proceso de renderizado</p>
+                                            <p>Para solventar el error, se debe refrescar la pantalla del navegador</p>
+                                        </li>
+                                    </ol>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <li>
+                    <div class="collapsible-header">2. Mac OS
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+                    <div class="collapsible-body blue-grey lighten-4">
+                        <ul class="collapsible blue-grey lighten-5" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header">1. Configurar el servidor
+                                    <i class="material-icons">arrow_drop_down</i>
+                                </div>
+                                <div class="collapsible-body blue-grey lighten-4">
+                                    <span>
+                                        <ul class="collapsible blue-grey lighten-5" data-collapsible="accordion">
+                                            <li type="i">
+                                                <div class="collapsible-header">1.Instalar Homebrew
+                                                    <i class="material-icons">arrow_drop_down</i>
+                                                </div>
+                                                <div class="collapsible-body blue-grey lighten-4">
+                                                    <span>
+                                                        <ol>
+                                                            <li type="i">
+                                                                <p>Ir a la página web de homebrew y copiar el código de insalación:
+                                                                    <br/>
+                                                                    <a href="https://bew.sh">https://bew.sh</a>
+                                                                </p>
+                                                                <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code>
+                                                                <a href="./dist/img/MacOs/brew.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/brew.png">
+                                                                </a>
+                                                            </li>
+
+                                                            <li type="i">
+                                                                <p>Ejecutar el comando desde la cónsola</b>
+                                                                </p>
+                                                                <a href="./dist/img/MacOs/brewterminal.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/brewterminal.png">
+                                                                </a>
+                                                            </li>
+                                                        </ol>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li type="i">
+                                                <div class="collapsible-header">2.Verificar versión node
+                                                    <i class="material-icons">arrow_drop_down</i>
+                                                </div>
+                                                <div class="collapsible-body blue-grey lighten-4">
+                                                    <span>
+                                                        <ol>
+                                                            <li type="i">
+                                                                <p>En la terminal ejecutar el código:</p>
+                                                                <code>node -v</code>
+                                                                <a href="./dist/img/MacOs/verificarnode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/verificarnode.png">
+                                                                </a>
+                                                                <p> En caso de no tener instalado node, ingresa a la página web
+                                                                    y descarga la versión LTS </p>
+                                                                <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>
+                                                                <a href="./dist/img/MacOs/instalarnode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/instalarnode.png">
+                                                                </a>
+                                                            </li>
+
+                                                            <li type="i">
+                                                                <p>Instalar nativescript de manera global ejecutando el sigiente
+                                                                    código desde la terminal</b>
+                                                                </p>
+                                                                <code>npm i -g nativescript</code>
+                                                            </li>
+                                                        </ol>
+                                                    </span>
+                                                </div>
+                                            </li>
+
+                                            <li type="i">
+                                                <div class="collapsible-header">2.Verificar instalación de nativescript
+                                                    <i class="material-icons">arrow_drop_down</i>
+                                                </div>
+                                                <div class="collapsible-body blue-grey lighten-4">
+                                                    <span>
+                                                        <ol>
+                                                            <li type="i">
+                                                                <p>En la terminal ejecutar el código:</p>
+                                                                <code>tns doctor</code>
+                                                                <a href="./dist/img/MacOs/verificarnode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/verificarnode.png">
+                                                                </a>
+                                                                <p> En caso de no tener instalado node, ingresa a la página web
+                                                                    y descarga la versión LTS </p>
+                                                                <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>
+                                                                <a href="./dist/img/MacOs/instalarnode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/instalarnode.png">
+                                                                </a>
+                                                            </li>
+
+                                                            <li type="i">
+                                                                <p>Instalar nativescript de manera global ejecutando el sigiente
+                                                                    código desde la terminal</b>
+                                                                </p>
+                                                                <code>npm i -g nativescript</code>
+                                                            </li>
+                                                        </ol>
+                                                    </span>
+                                                </div>
+                                            </li>
+
+                                            <li type="i">
+                                                <div class="collapsible-header">3.Instalar Xcode
+                                                    <i class="material-icons">arrow_drop_down</i>
+                                                </div>
+                                                <div class="collapsible-body blue-grey lighten-4">
+                                                    <span>
+                                                        <ol>
+                                                            <li type="i">
+                                                                <p>Abrir el app store e instalar Xcode</p>
+                                                                <a href="./dist/img/MacOs/xcode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/xcode.png">
+                                                                </a>
+                                                            </li>
+                                                        </ol>
+                                                    </span>
+                                                </div>
+                                            </li>
+
+                                            <li type="i">
+                                                <div class="collapsible-header">4.Instalar Command Line Tool for Xcode
+                                                    <i class="material-icons">arrow_drop_down</i>
+                                                </div>
+                                                <div class="collapsible-body blue-grey lighten-4">
+                                                    <span>
+                                                        <ol>
+                                                            <li type="i">
+                                                                <p>Abrir Xcode y seleccionar en el menú principal:
+                                                                    <b>Open Developer Tool -> More Developer Tools...</p>
+                                                                <a href="./dist/img/MacOs/abrirxcode.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/abrirxcode.png">
+                                                                </a>
+                                                            </li>
+                                                            <li type="i">
+                                                                <p>Iniciar sesión</p>
+                                                                <a href="./dist/img/MacOs/login.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/login.png">
+                                                                </a>
+                                                            </li>
+                                                            <li type="i">
+                                                                <p>Descargar Command Line Tools for Xcode</p>
+                                                                <a href="./dist/img/MacOs/descargarCLT.png">
+                                                                    <img class="img-responsive" src="./dist/img/MacOs/descargarCLT.png">
+                                                                </a>
+                                                            </li>
+                                                        </ol>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </li>
+        </ul>
+        <p class="center-align">
+            Luis José Márquez González
+        </p>
+    </div>
+    <script type="text/javascript" src="./dist/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./dist/js/materialize.min.js"></script>
+    </div>
+</body>
+
+</html>
