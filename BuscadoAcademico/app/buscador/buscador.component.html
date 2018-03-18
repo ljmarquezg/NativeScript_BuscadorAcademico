@@ -10,21 +10,26 @@
 <StackLayout width="100%" height="100%" orientation="vertical">
 
     <StackLayout class="search-panel" width="100%" height="auto" orientation="vertical">
-        <StackLayout visibility="{{visibility}}">
-            <GridLayout columns="45, *" rows="90" class="search-container">
+        <StackLayout visibility="{{visibility}}" paddingTop="0">
+            <GridLayout columns="45, *" rows="90" class="search-container" marginTop="0">
                 <button row="0" verticalAlignment="center" horizontalAlignment="center" col="0" [text]="iconSearch" (tap)="onReturn()" class="icon white"></button>
                 <TextField row="0" col="1" #searchPanel class="text-field" autocorrect="false" id="buscarTextField" hint="Universidad de Valencia"
                     (returnPress)="onReturn()" (textChange)="clearError()"></TextField>
             </GridLayout>
-            <label class="center error" text="El campo de búsqueda no puede ser vacío" *ngIf="error"></label>
+            <label class="center error" marginTop="0" marginBottom="0" textWrap="true" text="El campo de búsqueda no puede ser vacío"
+                *ngIf="error"></label>
+            <label class="center white" marginTop="0" marginBottom="0" textWrap="true" text="{{ locationService.errorText }}" *ngIf="locationService.errorStatus"></label>
+            <label class="center" text="Lat: {{ locationService.latitud | number: '2.1-3' }} | Lon: {{ locationService.longitud | number: '2.1-3' }} | Ubicación: {{ locationService.country ? locationService.country : '-' }}"
+                color="#ffffff" fontSize="10px" *ngIf="locationService.latitud && locationService.country"></label>
+            <label class="center" text="Última ubicación detectada: {{ locationService.country }}" color="#ffffff" fontSize="10px" *ngIf="locationService.country && !locationService.latitud"></label>
             <label class="center" text="Buscar universidad cerca de tu ubicación" color="#ffffff"></label>
             <button class="btn btn-primary" text="Ubicarme" (tap)="ubicarme()"></button>
         </StackLayout>
     </StackLayout>
 
-    <StackLayout *ngIf="isLoading" heigth="100%" orientation="vertical" margin-top="30">
-        <ActivityIndicator row="1" #activityIndicator [busy]="isLoading" width="100%" height="100" class="activity-indicator"></ActivityIndicator>
-        <label row="1" class="activity-indicator-label" [text]="isLoadingText" marginTop="20" horizontalAligment="center" verticalAligment="center"></label>
+    <StackLayout width="90%" *ngIf="isLoading" height="100%" orientation="vertical" verticalAlignment="center">
+        <ActivityIndicator row="1" #activityIndicator [busy]="isLoading" width="100%" height="100" verticalAlignment="center" class="activity-indicator"></ActivityIndicator>
+        <label row="1" class="activity-indicator-label" [text]="isLoadingText" textWrap="true" marginTop="20"></label>
     </StackLayout>
 
 
@@ -33,7 +38,7 @@
         <ListView [items]="universidaditems" class="list-group" *ngIf="totalItems">
             <ng-template let-item="item">
                 <GridLayout columns="*" rows="*, auto, auto" class="list-group-item">
-                    <label row="0" col="0" textWrap="true" text="{{ item.name }}" class="list-group-item-heading"></label>
+                    <label row="0" col="0" textWrap="true" text="{{ item.name }}" class="list-group-item-heading" color="#0080c0"></label>
                     <label row="1" col="0" textWrap="true" text="{{ item.country }}" class="list-group-item-text"></label>
                     <label row="2" col="0" textWrap="true" text="{{ item.web_pages[0] }}" class="list-group-item-text"></label>
                 </GridLayout>

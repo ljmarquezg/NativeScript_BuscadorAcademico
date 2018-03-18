@@ -19,10 +19,9 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .action-bar .icon {
-    margin-right: 5px;
-    padding-left: 10px;
-    padding-right: 20px;
-    margin-right: 10px;
+    padding-left: 0x;
+    padding-right: 0px;
+    margin-right: 20px;
 }
 
 .white {
@@ -54,6 +53,38 @@ refer to http://docs.nativescript.org/ui/theme.
     font-weight: 400;
 }
 
+.activity-indicator-label {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0080c0;
+}
+
+.btn-primary {
+    background-color: #0080c0;
+    border-color: white;
+    border-width: 1;
+    border-style: solid;
+}
+
+.search-panel {
+    background-color: #0080c0
+}
+
+.search-container {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.search-panel label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .text-field {
     background-color: #ffffff;
     border-bottom-style: solid;
@@ -62,47 +93,22 @@ refer to http://docs.nativescript.org/ui/theme.
     color: #0080c0;
     margin-left: 0;
     margin-right: 0;
-    border-width: 1;
+    border-width: 0;
     border-color: transparent;
     border-style: solid;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-.activity-indicator-label {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    color: #0080c0;
-}
-
-.search-panel {
-    background-color: #0080c0;
-}
-
-.search-container {
+.error {
+    color: red;
+    background-color: white;
     margin-top: 0;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: red
-}
-
-.btn-primary {
-    background-color: #0080c0;
-    border-color: white;
-    border-width: 1;
-    border-style: solid;
-    /* background-color: #ffffff;
-    color: #0080c0;
-    width: auto; */
-}
-
-.search-panel label {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px;
+    margin-bottom: 0;
+    border-top-width: 1;
+    border-top-color: #ccc;
+    border-top-style: solid;
 }
 
 button.icon.white {
@@ -115,13 +121,4 @@ button.icon.white {
     border-width: 1;
     border-color: transparent;
     color: #0080c0
-}
-
-.error {
-    color: red;
-    background-color: white;
-    margin-top: -10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 10px
 }

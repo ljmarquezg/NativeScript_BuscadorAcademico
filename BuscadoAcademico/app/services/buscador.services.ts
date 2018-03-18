@@ -15,15 +15,22 @@ export class BuscadorService {
 
     /*================== Convertir string en HTML ==============================*/
     htmlFormat(string) {
+        //Reemplazar los espacios " " por el valor %20 para coincidir con el formato HTML
         return string.replace(/ /g, "%20");
     }
     /*================== Consultar base de datos ==============================*/
     getUniversidad() {
-        let universidad = this.universidad
-        if (universidad === "") {
-            universidad = ""
+        this.url = "http://universities.hipolabs.com/search?name=" + this.htmlFormat(this.universidad);
+        console.log(this.url);
+        return this.http.get(this.url).map(response => response.json());
+    }
+
+    getUniversidadCiudad() {
+        //Si el pais es Venezuela, cambiar por el siguiente nombre
+        if (this.country === "Venezuela") {
+            this.country = "Venezuela, Bolivarian Republic of";
         }
-        this.url = "http://universities.hipolabs.com/search?name=" + this.htmlFormat(universidad) + "&country=" + this.htmlFormat(this.country);
+        this.url = "http://universities.hipolabs.com/search?name=" + this.htmlFormat(this.universidad) + "&country=" + this.htmlFormat(this.country);
         console.log(this.url);
         return this.http.get(this.url).map(response => response.json());
     }
