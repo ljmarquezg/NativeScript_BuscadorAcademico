@@ -155,7 +155,7 @@ export class BuscadorComponent {
             alertActions.push("Ubicar mi dispositivo")
             this.isLoading = false;
         } else {
-            alertMessaje = "Selecciona filtro de búsqueda";
+            alertMessaje = "Tu ubicación es: " + this.locationService.country;
             //Agregar opción al array de opciones
             alertActions.push("Buscar en mi ubicación")
         }
