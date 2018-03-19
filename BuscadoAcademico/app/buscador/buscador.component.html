@@ -1,16 +1,15 @@
-<ActionBar class="action-bar">
-    <GridLayout columns="*, auto, auto, auto" rows="auto">
-        <label row="0" col="0" [text]="appTitle"></label>
-        <label row="0" col="1" [text]="iconGpsOff" class="icon white" (tap)="locationService.permitirLocalizacion()" *ngIf="!locationService.locationStatus"></label>
-        <label row="0" col="1" [text]="iconGps" class="icon white" (tap)="locationService.permitirLocalizacion()" *ngIf="locationService.locationStatus"></label>
-        <label row="0" col="2" [text]="visibilityText" class="icon white" (tap)="toggleVisivility()"></label>
-    </GridLayout>
-</ActionBar>
-
 <StackLayout width="100%" height="100%" orientation="vertical">
+        <StackLayout class="action-bar">
+                <GridLayout columns="*, 40, 40" rows="auto">
+                    <label row="0" col="0" verticalAlignment="center" [text]="appTitle"></label>
+                    <label row="0" col="1" verticalAlignment="center" [text]="iconGpsOff" class="icon white" (tap)="locationService.permitirLocalizacion()"  horizontalAlignment="center"*ngIf="!locationService.locationStatus"></label>
+                    <label row="0" col="1" verticalAlignment="center" [text]="iconGps" class="icon white" (tap)="locationService.permitirLocalizacion()"  horizontalAlignment="center"*ngIf="locationService.locationStatus"></label>
+                    <label row="0" col="2" verticalAlignment="center" [text]="visibilityText" class="icon white" (tap)="toggleVisivility()" horizontalAlignment="center"></label>
+                </GridLayout>
+            </StackLayout>
 
     <StackLayout class="search-panel" width="100%" height="auto" orientation="vertical">
-        <StackLayout visibility="{{visibility}}" paddingTop="0">
+        <StackLayout visibility="{{visibility}}" paddingTop="0" orientation="vertical">
             <GridLayout columns="45, *" rows="90" class="search-container" marginTop="0">
                 <button row="0" verticalAlignment="center" horizontalAlignment="center" col="0" [text]="iconSearch" (tap)="onReturn()" class="icon white"></button>
                 <TextField row="0" col="1" #searchPanel class="text-field" autocorrect="false" id="buscarTextField" hint="Universidad de Valencia"
@@ -27,15 +26,15 @@
         </StackLayout>
     </StackLayout>
 
-    <StackLayout width="90%" *ngIf="isLoading" height="100%" orientation="vertical" verticalAlignment="center">
+    <StackLayout width="100%" *ngIf="isLoading" height="100%" orientation="vertical" verticalAlignment="center">
         <ActivityIndicator row="1" #activityIndicator [busy]="isLoading" width="100%" height="100" verticalAlignment="center" class="activity-indicator"></ActivityIndicator>
         <label row="1" class="activity-indicator-label" [text]="isLoadingText" textWrap="true" marginTop="20"></label>
     </StackLayout>
 
 
-    <StackLayout orientation="vertical">
+    <StackLayout orientation="vertical" height="100%">
         <label class="h3 table-header center" textWrap="true" [text]="totalItems"></label>
-        <ListView [items]="universidaditems" class="list-group" *ngIf="totalItems">
+        <ListView [items]="universidaditems" class="list-group" *ngIf="totalItems" height="100%">
             <ng-template let-item="item">
                 <GridLayout columns="*" rows="*, auto, auto" class="list-group-item">
                     <label row="0" col="0" textWrap="true" text="{{ item.name }}" class="list-group-item-heading" color="#0080c0"></label>

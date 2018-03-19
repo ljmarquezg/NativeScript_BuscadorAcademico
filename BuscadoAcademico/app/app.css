@@ -18,10 +18,25 @@ refer to http://docs.nativescript.org/ui/theme.
     margin-left: 15px;
 }
 
-.action-bar .icon {
+.action-bar {
+    background-color: #0080c0;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 20px;
+}
+
+.action-bar .icon.white {
     padding-left: 0x;
     padding-right: 0px;
-    margin-right: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left:0x;
+    padding-top:25px;
+    padding-bottom:25px;
+    background-color:transparent;
+    text-align: center
 }
 
 .white {
@@ -44,13 +59,6 @@ refer to http://docs.nativescript.org/ui/theme.
     border-top-color: #444444;
     border-top-style: solid;
     border-top-width: 2px;
-}
-
-.action-bar {
-    background-color: #0080c0;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 400;
 }
 
 .activity-indicator-label {

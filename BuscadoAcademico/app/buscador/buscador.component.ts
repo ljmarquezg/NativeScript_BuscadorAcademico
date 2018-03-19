@@ -57,6 +57,7 @@ export class BuscadorComponent {
     ngOnInit() {
         //Personalización de estilos
         this.page.backgroundColor = new Color("#eeeeee");
+        this.page.actionBarHidden = true;
         //Permitir Acceso al GPS
         this.locationService.permitirLocalizacion();
     }
